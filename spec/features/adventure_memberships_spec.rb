@@ -9,18 +9,18 @@ feature "user can join adventure", %{
   # * I must be signed in
   # * I must be able to invite friends from the adventure show page
 
-  # scenario "user can join adventure" do
-    # user = FactoryGirl.create(:user)
-    # adventure = FactoryGirl.create(:adventure)
+  scenario "user can join adventure" do
+    user = FactoryGirl.create(:user)
+    adventure = FactoryGirl.create(:adventure)
 
-    # visit root_path
-    # sign_in_as(user)
-    # click_link adventure.name
-    # click_link "Join The Adventure!"
+    visit root_path
+    sign_in_as(user)
+    click_link adventure.name
+    click_link "Join The Adventure!"
 
-    # expect(page).to have_content("You Have Joined The Adventure!")
-    # expect(adventure.members.count).to eq(1)
-  # end
+    expect(page).to have_content("You Have Joined The Adventure!")
+    expect(AdventureMembership.count).to eq(1)
+  end
 
   # scenario "host cannot join adventure" do
     # adventure_host_record = FactoryGirl.create(:adventure_host)
