@@ -5,3 +5,6 @@
 <%= @adventure.end_date %>
 <%= @adventure.start_time %>
 <%= @adventure.end_time %>
+
+<%= link_to "Join The Adventure!", adventure_adventure_memberships_path(@adventure), method: :post %>
+
